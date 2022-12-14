@@ -37,11 +37,13 @@ app.post("/", (req, res) => {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us8.api.mailchimp.com/3.0/lists/1a8232528c";
+  //url = "https://YOURSERVER.api.mailchimp.com/3.0/lists/YOURLISTID"
+  const url = "https://us8.api.mailchimp.com/3.0/lists/listID";
 
   const options = {
     method: "POST",
-    auth: "gustavo1:7842a815eb315d9463df061b3478db43-us8",
+    //auth: "name:apiKey" obviously my apiKEy is not going to github
+    auth: "gustavo:NOTMYKEY",
   };
 
   const request = https.request(url, options, (response) => {
@@ -63,7 +65,3 @@ app.post("/", (req, res) => {
 app.post("/failure", (req, res) => {
   res.redirect("/");
 });
-
-//apikey 7842a815eb315d9463df061b3478db43-us8
-
-//listid 1a8232528c
